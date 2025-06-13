@@ -741,6 +741,34 @@
             font-size: clamp(0.75rem, 2vw, 0.85rem);
         }
     }
+    .btn-under-dev {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(90deg, #ff6b6b, #ff5252);
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-under-dev:hover {
+    background: linear-gradient(90deg, #ff5252, #ff4444);
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments for under development button */
+@media (max-width: 480px) {
+    .btn-under-dev {
+        padding: 0.5rem 0.8rem;
+        font-size: clamp(0.8rem, 2vw, 0.9rem);
+    }
+}
 
     @media (max-width: 480px) {
         .container {
@@ -831,6 +859,12 @@
         }
 
         .btn-primary {
+            padding: 0.5rem 0.8rem;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+            background-color: brown;
+        }
+
+        .btn-dev{
             padding: 0.5rem 0.8rem;
             font-size: clamp(0.8rem, 2vw, 0.9rem);
         }
@@ -932,11 +966,17 @@
     <div class="cards-grid">
         <!-- Farmer -->
         <div class="card">
-            <img src="{{ url_for('static', filename='images/farmer.png') }}" alt="Farmer">
+            <!-- <img src="{{ url_for('static', filename='images/farmer.png') }}" alt="Farmer">
             <h3>{{ content.farmer_title }}</h3>
             <p>{{ content.farmer_description }}</p>
             <form action="/" method="post">
                 <button type="submit" name="user_type" value="farmer" class="btn-primary">{{ content.get_started }}</button>
+            </form> -->
+             <img src="{{ url_for('static', filename='images/youth.png') }}" alt="Village Youth">
+            <h3>{{ content.village_youth_title }}</h3>
+            <p>{{ content.village_youth_description }}</p>
+            <form action="/" method="post">
+                <button type="submit" name="user_type" value="youth" class="btn-primary">{{ content.get_started }}</button>
             </form>
         </div>
 
@@ -946,21 +986,29 @@
             <h3>{{ content.housewife_title }}</h3>
             <p>{{ content.housewife_description }}</p>
             <form action="/" method="post">
-                <button type="submit" name="user_type" value="housewife" class="btn-primary">{{ content.get_started }}</button>
+                <button type="submit" name="user_type" value="housewife" class="btn-under-dev">{{ content.under_developement }}</button>
             </form>
         </div>
 
         <!-- Village Youth -->
         <div class="card">
-            <img src="{{ url_for('static', filename='images/youth.png') }}" alt="Village Youth">
+            <!-- <img src="{{ url_for('static', filename='images/youth.png') }}" alt="Village Youth">
             <h3>{{ content.village_youth_title }}</h3>
             <p>{{ content.village_youth_description }}</p>
             <form action="/" method="post">
                 <button type="submit" name="user_type" value="youth" class="btn-primary">{{ content.get_started }}</button>
+            </form> -->
+            <img src="{{ url_for('static', filename='images/farmer.png') }}" alt="Farmer">
+            <h3>{{ content.farmer_title }}</h3>
+            <p>{{ content.farmer_description }}</p>
+            <form action="/" method="post">
+                <button type="submit" name="user_type" value="farmer" class="btn-under-dev">{{ content.under_developement }}</button>
             </form>
         </div>
     </div>
 </div>
+
+
 
 <!-- Footer Section -->
 <footer class="footer">
