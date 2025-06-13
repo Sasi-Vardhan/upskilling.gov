@@ -63,7 +63,7 @@ def parallel_translate(text_dict, lang_code):
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    session.clear()
+    # session.clear()
     sdict = dict(session)
     for key, value in sdict.items():
         if key != 'L' and key != 'language' and key != 'category':
